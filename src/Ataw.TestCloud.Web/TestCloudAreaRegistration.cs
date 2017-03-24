@@ -18,6 +18,7 @@ namespace Ataw.TestCloud.Web
 
         public override void RegisterArea(AreaRegistrationContext context)
         {
+            //测试一下
             context.MapRoute(
               "TestCloud_default",
               "TestCloud/{controller}/{action}/{id}",
