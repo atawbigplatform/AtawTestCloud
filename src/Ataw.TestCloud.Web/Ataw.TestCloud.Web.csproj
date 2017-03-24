@@ -151,6 +151,10 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ataw.TestCloud.Core\Ataw.TestCloud.Core.csproj">
+      <Project>{C76A6D71-4410-44F5-95B5-FA70721FB5CE}</Project>
+      <Name>Ataw.TestCloud.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ataw.TestCloud.Service\Ataw.TestCloud.Service.csproj">
       <Project>{86b5a8d0-bf80-4c8b-8a33-32e1f8020e72}</Project>
       <Name>Ataw.TestCloud.Service</Name>

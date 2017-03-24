@@ -17,10 +17,12 @@ namespace Ataw.TestCloud.Service
 
         public void Test(string url)
         {
-            string _userID = "ataws";
+
+            string ChomeDriverPath = "ChomeDriverPath".AppKv<string>("");
+            string _userID = AtawAppContext.Current.UserId;
             Task task = new Task(() =>
             {
-                IWebDriver driver = new ChromeDriver(@"D:\\WebDeriver");
+                IWebDriver driver = new ChromeDriver(ChomeDriverPath);
                 try
                 {
 
@@ -44,7 +46,7 @@ namespace Ataw.TestCloud.Service
                     {
                         return a.Title == "主页";
                     });
-                   
+
                     ScreenGFile(driver, "主页");
                     TestCloudUtil.SendCommandFun(_userID, "登录成功");
 
