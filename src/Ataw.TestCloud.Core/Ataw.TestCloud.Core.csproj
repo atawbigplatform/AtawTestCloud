@@ -58,6 +58,10 @@
     <Compile Include="TestCloudUtil.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Ataw.TestCloud.BF\Ataw.TestCloud.BF.csproj">
+      <Project>{ccf0f94f-6097-41fb-bd81-70c2942c00b7}</Project>
+      <Name>Ataw.TestCloud.BF</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ataw.TestCloud.DB\Ataw.TestCloud.DB.csproj">
       <Project>{f4724646-e9c2-4e09-afb5-d4eba117a015}</Project>
       <Name>Ataw.TestCloud.DB</Name>

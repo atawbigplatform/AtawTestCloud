@@ -1,4 +1,5 @@
 ﻿using Ataw.Framework.Core;
+using Ataw.TestCloud.BF;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,6 +43,14 @@ namespace Ataw.TestCloud.Core
                 return false;
             }
 
+        }
+
+
+        public static void SendCommandFunBySql(string userId, string line, string key = "", string CmdName = "")
+        {
+            BFNodeNews bf = new BFNodeNews();
+
+            bf.SendCommandFunBySql(userId, line, key, CmdName);
         }
 
         //输出日记

@@ -26,7 +26,7 @@ namespace Ataw.TestCloud.Service
                 try
                 {
 
-                    TestCloudUtil.SendCommandFun(_userID, "连接成功(可有可无)");
+                    TestCloudUtil.SendCommandFunBySql(_userID, "连接成功(可有可无)");
                     //先登录
                     driver.Navigate().GoToUrl("http://192.168.68.19:6725/rightcloud/auth/index/1");
 
@@ -39,7 +39,7 @@ namespace Ataw.TestCloud.Service
                     IWebElement _btLogin = driver.FindElement(By.Id("btLogin"));
                     _btLogin.Click();
 
-                    TestCloudUtil.SendCommandFun(_userID, "登录中，加载中。。。。");
+                    TestCloudUtil.SendCommandFunBySql(_userID, "登录中，加载中。。。。");
                     ScreenGFile(driver, "主页");
 
                     new WebDriverWait(driver, new TimeSpan(0, 0, 60)).Until(a =>
@@ -48,13 +48,13 @@ namespace Ataw.TestCloud.Service
                     });
 
                     ScreenGFile(driver, "主页");
-                    TestCloudUtil.SendCommandFun(_userID, "登录成功");
+                    TestCloudUtil.SendCommandFunBySql(_userID, "登录成功");
 
                     driver.Navigate().GoToUrl(url);
                     driver.Manage().Window.Maximize();
 
                     ScreenGFile(driver, "页面跳转");
-                    TestCloudUtil.SendCommandFun(_userID, "页面跳转");
+                    TestCloudUtil.SendCommandFunBySql(_userID, "页面跳转");
 
 
                     new WebDriverWait(driver, new TimeSpan(0, 0, 10)).Until(a =>
@@ -77,14 +77,14 @@ namespace Ataw.TestCloud.Service
                     if (span.Text.Contains("这个Selenium真的能折腾人"))
                     {
                         ScreenGFile(driver, "测试成功");
-                        TestCloudUtil.SendCommandFun(_userID, "测试成功");
+                        TestCloudUtil.SendCommandFunBySql(_userID, "测试成功");
                     }
 
                 }
                 catch (Exception e)
                 {
                     ScreenGFile(driver, e.Message + "+异常");
-                    TestCloudUtil.SendCommandFun(_userID, e.Message);
+                    TestCloudUtil.SendCommandFunBySql(_userID, e.Message);
                     Console.WriteLine(e.Message);
                 }
                 finally
@@ -101,7 +101,7 @@ namespace Ataw.TestCloud.Service
         {
             Screenshot screenShotFile = ((ITakesScreenshot)driver).GetScreenshot();
             string dataStr = DateTime.Now.ToString("yyyyMMddhhmmsssss");
-            screenShotFile.SaveAsFile("D:\\shaoqi\\" + dataStr + "+" + name + ".jpg", ImageFormat.Jpeg);
+            screenShotFile.SaveAsFile("F:\\shaoqi\\" + dataStr + "+" + name + ".jpg", ImageFormat.Jpeg);
         }
 
     }
