@@ -22,20 +22,62 @@ namespace Ataw.TestCloud.Core
 
         protected TestCase testCase { get; set; }
 
+        
+
         public PageTestBase(IWebDriver driver)
         {
+            if (driver == null) throw new NullReferenceException("浏览器驱动不能为null");
             this.driver = driver;//基类中进行定位
         }
 
-        public virtual void onTest(TestCase testcase)
+        public IWebDriver getDriver()
         {
+            return driver;
+        }
 
-            if (startTime != null)
-            {
-                endTime = DateTime.Now;
-                duration = startTime - endTime;
-            }
+
+        //获取当前的地址
+        public String getCurrentUrl()
+        {
+            return driver.Url;
+        }
+
+        
+        public IWebElement getElementByID(string  ElementName)
+        {
+            return driver.FindElement(By.Id(ElementName));
+        }
+
+        public ICollection<IWebElement> getElementByName(string ElementName)
+        {
+            return driver.FindElements(By.ClassName(ElementName));
+        }
+
+        public IWebElement getElement(By by)
+        {
+            return driver.FindElement(by);
+        }
+
+        public ICollection<IWebElement> getElements(By by)
+        {
+            return driver.FindElements(by);
+        }
+
+
+        public void stop()
+        {
             driver.Quit();
         }
+
+        //public virtual void onTest(TestCase testcase)
+        //{
+
+        //    if (startTime != null)
+        //    {
+        //        endTime = DateTime.Now;
+        //        duration = startTime - endTime;
+        //    }
+        //    driver.Quit();
+        //}
     }
 }

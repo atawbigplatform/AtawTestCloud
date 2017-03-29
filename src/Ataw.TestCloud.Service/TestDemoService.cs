@@ -1,5 +1,6 @@
 ﻿using Ataw.Framework.Core;
 using Ataw.TestCloud.Core;
+using Ataw.TestCloud.TestPage;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
@@ -17,7 +18,6 @@ namespace Ataw.TestCloud.Service
 
         public void Test(string url)
         {
-
             string ChomeDriverPath = "ChomeDriverPath".AppKv<string>("");
             string _userID = AtawAppContext.Current.UserId;
             Task task = new Task(() =>
@@ -25,10 +25,10 @@ namespace Ataw.TestCloud.Service
                 IWebDriver driver = new ChromeDriver(ChomeDriverPath);
                 try
                 {
-
                     TestCloudUtil.SendCommandFunBySql(_userID, "连接成功(可有可无)");
+                    TestCloudUtil.SendCommandFun(_userID, "登录中，加载中。。。。");
                     //先登录
-                    driver.Navigate().GoToUrl("http://192.168.68.19:6725/rightcloud/auth/index/1");
+                    driver.Navigate().GoToUrl("http://localhost:4676/rightcloud/auth/index/1");
 
                     IWebElement _login = driver.FindElement(By.Id("inputLoginName"));
                     IWebElement _password = driver.FindElement(By.Id("inputPass"));
@@ -40,6 +40,7 @@ namespace Ataw.TestCloud.Service
                     _btLogin.Click();
 
                     TestCloudUtil.SendCommandFunBySql(_userID, "登录中，加载中。。。。");
+                    TestCloudUtil.SendCommandFun(_userID, "登录中，加载中。。。。");
                     ScreenGFile(driver, "主页");
 
                     new WebDriverWait(driver, new TimeSpan(0, 0, 60)).Until(a =>
@@ -49,13 +50,13 @@ namespace Ataw.TestCloud.Service
 
                     ScreenGFile(driver, "主页");
                     TestCloudUtil.SendCommandFunBySql(_userID, "登录成功");
-
+                    TestCloudUtil.SendCommandFun(_userID, "登录成功");
                     driver.Navigate().GoToUrl(url);
                     driver.Manage().Window.Maximize();
 
                     ScreenGFile(driver, "页面跳转");
                     TestCloudUtil.SendCommandFunBySql(_userID, "页面跳转");
-
+                    TestCloudUtil.SendCommandFun(_userID, "页面跳转");
 
                     new WebDriverWait(driver, new TimeSpan(0, 0, 10)).Until(a =>
                     {
@@ -78,6 +79,7 @@ namespace Ataw.TestCloud.Service
                     {
                         ScreenGFile(driver, "测试成功");
                         TestCloudUtil.SendCommandFunBySql(_userID, "测试成功");
+                        TestCloudUtil.SendCommandFun(_userID, "测试成功");
                     }
 
                 }
@@ -92,10 +94,33 @@ namespace Ataw.TestCloud.Service
                     driver.Quit();
                 }
             });
+            task.Start();
+        }
+
+        public void Login(string url)
+        {
+            Task task = new Task(() =>
+            {
+                LoginPageTest testpage = new LoginPageTest();
+                testpage.onLogin();
+                testpage.quit();
+            });
 
             task.Start();
         }
 
+
+        public void TestMianPage(string url)
+        {
+            Task task = new Task(() =>
+            {
+                MinTestPageTest testpage = new MinTestPageTest();
+                testpage.ontest(url);
+                testpage.quit();
+            });
+
+            task.Start();
+        }
 
         public static void ScreenGFile(IWebDriver driver, string name)
         {

@@ -29,6 +29,36 @@ namespace Ataw.TestCloud.Web.Controllers
 
         }
 
+        public string Login(string url)
+        {
+            //先检查exe在不在
+            if (TestCloudUtil.CheckExe())
+            {
+                TestDemoService service = new TestDemoService();
+                service.Login(url);
+                return ReturnJson("");
+            }
+            else
+            {
+                return ReturnJson("No File");
+            }
+        }
+
+
+        public string TestMianPage(string url)
+        {
+            if (TestCloudUtil.CheckExe())
+            {
+                TestDemoService service = new TestDemoService();
+                service.TestMianPage(url);
+                return ReturnJson("");
+            }
+            else
+            {
+                return ReturnJson("No File");
+            }
+        }
+
         public string Demo()
         {
             return "dddd123";

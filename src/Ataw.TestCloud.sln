@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ataw.TestCloud.Web", "Ataw.TestCloud.Web\Ataw.TestCloud.Web.csproj", "{3BDED2FB-972F-429F-B5A9-821C24D36304}"
 EndProject
@@ -20,6 +20,16 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ataw.TestCloud.Data", "Ataw.TestCloud.Data\Ataw.TestCloud.Data.csproj", "{5C8E859C-FE22-4B46-BD70-6B041462FB40}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ataw.TestCloud.Css", "Ataw.TestCloud.Css\Ataw.TestCloud.Css.csproj", "{F685BEC8-A60F-41C9-9229-002FFDDC2725}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "platfrom", "platfrom", "{D5AD54B6-1070-4CFD-8CC2-EAC21253CBED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ataw.WebSite", "..\..\_output\Web\Ataw.WebSite\Ataw.WebSite.csproj", "{E4130DED-6782-4DB1-83B7-77FA262A2029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml", "..\..\_output\Web\xml\Xml.csproj", "{4E7EE945-0559-4755-A468-5B5EBC252C94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ataw.TestCloud.TestPage", "Ataw.TestCloud.TestPage\Ataw.TestCloud.TestPage.csproj", "{69E93FB2-4B8E-4355-A705-C87677EDC083}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ataw.TestCloud.Page", "Ataw.TestCloud.Page\Ataw.TestCloud.Page.csproj", "{DDE6C875-B864-4066-B4D3-F8261962D5E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,8 +73,28 @@ Global
 		{F685BEC8-A60F-41C9-9229-002FFDDC2725}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F685BEC8-A60F-41C9-9229-002FFDDC2725}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F685BEC8-A60F-41C9-9229-002FFDDC2725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4130DED-6782-4DB1-83B7-77FA262A2029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4130DED-6782-4DB1-83B7-77FA262A2029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4130DED-6782-4DB1-83B7-77FA262A2029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4130DED-6782-4DB1-83B7-77FA262A2029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E7EE945-0559-4755-A468-5B5EBC252C94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E7EE945-0559-4755-A468-5B5EBC252C94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E7EE945-0559-4755-A468-5B5EBC252C94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E7EE945-0559-4755-A468-5B5EBC252C94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69E93FB2-4B8E-4355-A705-C87677EDC083}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69E93FB2-4B8E-4355-A705-C87677EDC083}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69E93FB2-4B8E-4355-A705-C87677EDC083}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69E93FB2-4B8E-4355-A705-C87677EDC083}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDE6C875-B864-4066-B4D3-F8261962D5E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDE6C875-B864-4066-B4D3-F8261962D5E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDE6C875-B864-4066-B4D3-F8261962D5E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDE6C875-B864-4066-B4D3-F8261962D5E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E4130DED-6782-4DB1-83B7-77FA262A2029} = {D5AD54B6-1070-4CFD-8CC2-EAC21253CBED}
+		{4E7EE945-0559-4755-A468-5B5EBC252C94} = {D5AD54B6-1070-4CFD-8CC2-EAC21253CBED}
 	EndGlobalSection
 EndGlobal
