@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace Ataw.TestCloud.Data
 {
-    public class Class1
+    public class PageData
     {
+        public string url;
+        public TestCaseData data;
     }
+
+    public class TestCaseData
+    {
+
+    }
+
+    //要不要个TestStepData
 }

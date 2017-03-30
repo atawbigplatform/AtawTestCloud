@@ -1,5 +1,6 @@
 ﻿using Ataw.Framework.Core;
 using Ataw.TestCloud.Core;
+using Ataw.TestCloud.Data;
 using Ataw.TestCloud.Page;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -15,26 +16,15 @@ namespace Ataw.TestCloud.TestPage
     public class LoginPageTest : BasePageTest
     {
 
-
-        public void onLogin()
-        {
-            try
-            {
-                init();
-                ((LoginPage)page).OnLogin();
-            }
-            catch (Exception e)
-            {
-                driver.Dispose();
-                driver = null;
-            }
-        }
-
         public override void init()
         {
             driver.Navigate().GoToUrl("SeleniumMianUrl".AppKv<string>(""));//主页地址
             page = new LoginPage(driver);
         }
 
+        public override void PageAction(PageData data)
+        {
+            ((LoginPage)page).OnLogin();  
+        }
     }
 }

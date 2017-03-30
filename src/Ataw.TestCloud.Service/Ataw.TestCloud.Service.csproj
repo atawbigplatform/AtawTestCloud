@@ -61,6 +61,10 @@
       <Project>{c76a6d71-4410-44f5-95b5-fa70721fb5ce}</Project>
       <Name>Ataw.TestCloud.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ataw.TestCloud.Data\Ataw.TestCloud.Data.csproj">
+      <Project>{5c8e859c-fe22-4b46-bd70-6b041462fb40}</Project>
+      <Name>Ataw.TestCloud.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ataw.TestCloud.Page\Ataw.TestCloud.Page.csproj">
       <Project>{dde6c875-b864-4066-b4d3-f8261962d5e5}</Project>
       <Name>Ataw.TestCloud.Page</Name>

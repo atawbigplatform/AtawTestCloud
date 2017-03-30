@@ -64,7 +64,7 @@ namespace Ataw.TestCloud.Core
         }
 
 
-        public void stop()
+        public void quit()
         {
             driver.Quit();
         }

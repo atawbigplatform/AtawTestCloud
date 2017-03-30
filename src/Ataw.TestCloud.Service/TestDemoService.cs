@@ -1,5 +1,6 @@
 ﻿using Ataw.Framework.Core;
 using Ataw.TestCloud.Core;
+using Ataw.TestCloud.Data;
 using Ataw.TestCloud.TestPage;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -102,8 +103,7 @@ namespace Ataw.TestCloud.Service
             Task task = new Task(() =>
             {
                 LoginPageTest testpage = new LoginPageTest();
-                testpage.onLogin();
-                testpage.quit();
+                testpage.Action();
             });
 
             task.Start();
@@ -114,8 +114,10 @@ namespace Ataw.TestCloud.Service
         {
             Task task = new Task(() =>
             {
+                PageData data = new PageData() { url=url};
+
                 MinTestPageTest testpage = new MinTestPageTest();
-                testpage.ontest(url);
+                testpage.Action(data);
                 testpage.quit();
             });
 

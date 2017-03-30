@@ -11,8 +11,6 @@ namespace Ataw.TestCloud.Web.Controllers
 {
     public class TestPageController : AtawBaseController
     {
-
-
         public string TestDemoPage(string url)
         {
             //先检查exe在不在
@@ -43,7 +41,6 @@ namespace Ataw.TestCloud.Web.Controllers
                 return ReturnJson("No File");
             }
         }
-
 
         public string TestMianPage(string url)
         {

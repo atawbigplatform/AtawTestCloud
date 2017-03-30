@@ -1,5 +1,6 @@
 ﻿using Ataw.Framework.Core;
 using Ataw.TestCloud.Core;
+using Ataw.TestCloud.Data;
 using Ataw.TestCloud.Page;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
@@ -22,36 +23,21 @@ namespace Ataw.TestCloud.TestPage
             page = new MinTestPage(driver);
         }
 
-
-        public void ontest(string url)
+        public override void PageAction(PageData data)
         {
-            try
+            new WebDriverWait(driver, new TimeSpan(0, 0, 20)).Until(a =>
             {
-                init();
+                return a.Title == "主页";
+            });
+            //等待 页面跳转然
+            page.getDriver().Navigate().GoToUrl(data.url);
 
-                new WebDriverWait(driver, new TimeSpan(0, 0, 20)).Until(a =>
-                {
-                    return a.Title == "主页";
-                });
-                //等待 页面跳转然
-                page.getDriver().Navigate().GoToUrl(url);
-
-                new WebDriverWait(driver, new TimeSpan(0, 0, 20)).Until(a =>
-                {
-                    return a.Title == "TestMinPage页面;";
-                });
-
-                ((MinTestPage)page).Action();
-            }
-            catch (Exception e)
+            new WebDriverWait(driver, new TimeSpan(0, 0, 20)).Until(a =>
             {
-                driver.Dispose();
-                driver = null;
-            }
+                return a.Title == "TestMinPage页面;";
+            });
 
+            ((MinTestPage)page).Action();
         }
-
-
-
     }
 }
