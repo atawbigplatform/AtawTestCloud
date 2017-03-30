@@ -12,7 +12,7 @@ namespace Ataw.TestCloud.Core
     public abstract class PageTestBase
     {
 
-        protected IWebDriver driver { get; }
+        protected   IWebDriver driver { get; private set; }
 
         protected DateTime startTime { get; set; }
 
