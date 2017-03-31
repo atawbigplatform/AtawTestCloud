@@ -20,9 +20,8 @@ namespace Ataw.TestCloud.Core
 
         protected TimeSpan duration { get; set; }
 
-        protected TestCase testCase { get; set; }
+        //protected TestCase testCase { get; set; }
 
-        
 
         public PageTestBase(IWebDriver driver)
         {
@@ -69,15 +68,5 @@ namespace Ataw.TestCloud.Core
             driver.Quit();
         }
 
-        //public virtual void onTest(TestCase testcase)
-        //{
-
-        //    if (startTime != null)
-        //    {
-        //        endTime = DateTime.Now;
-        //        duration = startTime - endTime;
-        //    }
-        //    driver.Quit();
-        //}
     }
 }

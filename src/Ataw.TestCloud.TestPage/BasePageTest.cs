@@ -34,12 +34,28 @@ namespace Ataw.TestCloud.TestPage
         /// </summary>
         abstract public void PageAction(PageData data);
 
-        public virtual void Action(PageData data=null)//是给参数默认值  还是重载抽象函数 PageAction方法
+        public virtual void Action(PageData data = null)
         {
+
             try
             {
                 init();
+
+                var PageRegisteredName = "";
+
+                if (data != null && data.url != null)
+                {
+                    string[] urls = data.url.Split('#');
+                    if (urls.Length > 1)
+                    {
+                        string[] args = urls[1].Split('$');
+                        PageRegisteredName = args[1];
+                    }
+                }
+
+                TestCloudUtil.ScreenGFile(driver, PageRegisteredName + "开始");
                 PageAction(data);
+                TestCloudUtil.ScreenGFile(driver, PageRegisteredName + "结束");
                 page.quit();
             }
             catch (Exception e)

@@ -52,11 +52,17 @@ namespace Ataw.TestCloud.Page
         public void Action()
         {
             text.SendKeys("这个Selenium真的能折腾人");
+
             btn.Click();
             //获得弹出框
             var alert = driver.SwitchTo().Alert();
             //点击确定
             alert.Accept();
+
+            if (span.Text == "文本框的值：+这个Selenium真的能折腾人")
+            {
+                TestCloudUtil.SendCommandFunBySql("ataws", "Text测试成功");
+            }
         }
 
     }

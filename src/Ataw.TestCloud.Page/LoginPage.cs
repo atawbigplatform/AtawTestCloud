@@ -77,27 +77,17 @@ namespace Ataw.TestCloud.Page
             SendUserName("ataws");
             SendPass("ataws");
             OnLogin();
+            try
+            {
+                var alert = driver.SwitchTo().Alert();
+                TestCloudUtil.SendCommandFunBySql("ataws", "登陆失败" + alert.Text);
+            }
+            catch (Exception e)
+            {
+                TestCloudUtil.SendCommandFunBySql("ataws", "登陆成功");
+            }
         }
 
     }
-    //public override void onTest(TestCase testcase)
-    //{
-    //    startTime = DateTime.Now;
 
-    //    driver.Navigate().GoToUrl("http://192.168.68.19:6725/rightcloud/auth/index/1");
-
-    //    IWebElement _login = driver.FindElement(By.Id("inputLoginName"));
-    //    IWebElement _password = driver.FindElement(By.Id("inputPass"));
-
-    //    _login.Clear();
-    //    _password.Clear();
-
-    //    _login.SendKeys("ataws");
-    //    _password.SendKeys("ataws");
-
-    //    IWebElement _btLogin = driver.FindElement(By.Id("btLogin"));
-    //    _btLogin.Click();
-
-    //    base.onTest(testcase);//测试完之后 释放资源
-    //}
 }

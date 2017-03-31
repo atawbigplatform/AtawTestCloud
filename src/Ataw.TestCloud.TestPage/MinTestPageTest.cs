@@ -21,18 +21,20 @@ namespace Ataw.TestCloud.TestPage
             LoginPage login = new LoginPage(driver);
             login.Login();
             page = new MinTestPage(driver);
-        }
 
-        public override void PageAction(PageData data)
-        {
-            new WebDriverWait(driver, new TimeSpan(0, 0, 20)).Until(a =>
+            new WebDriverWait(driver, new TimeSpan(0, 0, 60)).Until(a =>
             {
                 return a.Title == "主页";
             });
             //等待 页面跳转然
+         
+        }
+
+        public override void PageAction(PageData data)
+        {
             page.getDriver().Navigate().GoToUrl(data.url);
 
-            new WebDriverWait(driver, new TimeSpan(0, 0, 20)).Until(a =>
+            new WebDriverWait(driver, new TimeSpan(0, 0, 60)).Until(a =>
             {
                 return a.Title == "TestMinPage页面;";
             });

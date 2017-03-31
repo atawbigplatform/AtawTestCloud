@@ -128,7 +128,7 @@ namespace Ataw.TestCloud.Service
         {
             Screenshot screenShotFile = ((ITakesScreenshot)driver).GetScreenshot();
             string dataStr = DateTime.Now.ToString("yyyyMMddhhmmsssss");
-            screenShotFile.SaveAsFile("F:\\shaoqi\\" + dataStr + "+" + name + ".jpg", ImageFormat.Jpeg);
+            screenShotFile.SaveAsFile("F:\\shaoqi\\" + dataStr + "+" + name + ".jpg", ScreenshotImageFormat.Jpeg);
         }
 
     }

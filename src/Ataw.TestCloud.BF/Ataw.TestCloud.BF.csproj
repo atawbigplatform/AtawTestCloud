@@ -52,8 +52,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ataw.TestCloudBaseBF.cs" />
     <Compile Include="BFNodeNews.cs" />
+    <Compile Include="BFTestCase.cs" />
+    <Compile Include="BFTestStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ataw.TestCloud.Data\Ataw.TestCloud.Data.csproj">
+      <Project>{5c8e859c-fe22-4b46-bd70-6b041462fb40}</Project>
+      <Name>Ataw.TestCloud.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ataw.TestCloud.DA\Ataw.TestCloud.DA.csproj">
+      <Project>{d50f6fd2-35b3-481d-bdd3-6d6aef7aee74}</Project>
+      <Name>Ataw.TestCloud.DA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ataw.TestCloud.DB\Ataw.TestCloud.DB.csproj">
+      <Project>{f4724646-e9c2-4e09-afb5-d4eba117a015}</Project>
+      <Name>Ataw.TestCloud.DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
