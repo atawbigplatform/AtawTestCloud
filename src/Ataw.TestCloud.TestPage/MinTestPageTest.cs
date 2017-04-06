@@ -14,6 +14,8 @@ namespace Ataw.TestCloud.TestPage
 {
     public class MinTestPageTest : BasePageTest
     {
+
+        public override string PageName => "MinTestPage";
         public override void init()
         {
             driver.Navigate().GoToUrl("SeleniumMianUrl".AppKv<string>(""));//主页地址
@@ -27,7 +29,6 @@ namespace Ataw.TestCloud.TestPage
                 return a.Title == "主页";
             });
             //等待 页面跳转然
-         
         }
 
         public override void PageAction(PageData data)

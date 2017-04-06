@@ -17,6 +17,9 @@ namespace Ataw.TestCloud.BF
         {
             DATestStep da = new DATestStep(UnitOfData);
             model.FID = UnitOfData.GetUniId();
+            model.FControlUnitID = "1";
+            model.CREATE_ID = model.UserID;
+            model.UPDATE_ID = model.UserID;
             da.Add(model);
             return model.FID;
         }

@@ -98,12 +98,14 @@ namespace Ataw.TestCloud.Service
             task.Start();
         }
 
-        public void Login(string url)
+        public void Login(string url, string _userID)
         {
             Task task = new Task(() =>
             {
+                PageData data = new PageData();
+                data.userId = _userID;
                 LoginPageTest testpage = new LoginPageTest();
-                testpage.Action();
+                testpage.Action(data);
             });
 
             task.Start();
@@ -114,7 +116,7 @@ namespace Ataw.TestCloud.Service
         {
             Task task = new Task(() =>
             {
-                PageData data = new PageData() { url=url};
+                PageData data = new PageData() { url = url };
 
                 MinTestPageTest testpage = new MinTestPageTest();
                 testpage.Action(data);

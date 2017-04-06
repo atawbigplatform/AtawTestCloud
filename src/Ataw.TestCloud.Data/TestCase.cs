@@ -37,7 +37,19 @@ namespace Ataw.TestCloud.Table
 
         public string Title { get; set; }
 
+        //public static TestCase InitCaseModel()
+        //{
+        //    TestCase ModelCase = new TestCase()
+        //    {
+        //        UserID = _UserID,
+        //        PageName = PageName,
+        //        IsPass = true,
+        //        TestTime = DateTime.Now,
+        //        Title = title
+        //    };
 
+        //    return ModelCase;
+        //}
     }
 
 }

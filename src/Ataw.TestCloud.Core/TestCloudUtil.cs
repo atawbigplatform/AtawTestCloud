@@ -116,5 +116,23 @@ namespace Ataw.TestCloud.Core
         {
 
         }
+
+        //public static void initCaseModel( , String title)
+        //{
+        //    ModelCase = new TestCase()
+        //    {
+        //        UserID = _UserID,
+        //        PageName = PageName,
+        //        IsPass = true,
+        //        TestTime = DateTime.Now,
+        //        Title = title
+        //    };
+        //}
+
+        //public void AddStepModel(string line)
+        //{
+        //    TestStep errorModel = new TestStep() { TestCaseFID = CaseID, IsPass = "1", CmdName = "SeleniumTestPage", Line = line, IsSend = "1", UserID = _UserID };
+        //    this.ModelSetps.Add(errorModel);
+        //}
     }
 }

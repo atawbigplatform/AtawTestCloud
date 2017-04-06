@@ -33,7 +33,8 @@ namespace Ataw.TestCloud.Web.Controllers
             if (TestCloudUtil.CheckExe())
             {
                 TestDemoService service = new TestDemoService();
-                service.Login(url);
+                var userID = AtawAppContext.Current.UserId;
+                service.Login(url, userID);
                 return ReturnJson("");
             }
             else

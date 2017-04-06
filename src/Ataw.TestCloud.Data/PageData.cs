@@ -9,6 +9,7 @@ namespace Ataw.TestCloud.Data
     public class PageData
     {
         public string url;
+        public string userId;
         public TestCaseData data;
     }
 
